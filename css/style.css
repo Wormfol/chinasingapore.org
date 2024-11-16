@@ -218,15 +218,15 @@ p {
 .hero_section {
     position: relative;
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
   
-.hero_section .img {
+/* .hero_section .img {
     position: relative;
-    top: -30px;
-    transform: translate(0, 0);
+    top: -20px;
+    transform: translate(20, 0);
     max-width: 100%;
-}
+} */
 
 
 .white_pad {
@@ -243,7 +243,7 @@ p {
 
 .top_left_cont {
     padding-top: 30px;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
 }
 
 .top_left_cont h3 {
