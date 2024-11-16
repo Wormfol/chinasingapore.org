@@ -218,12 +218,13 @@ p {
 .hero_section {
     position: relative;
     padding-top: 50px;
+    padding-bottom: 10px;
 }
   
 .hero_section .img {
     position: relative;
     top: -30px;
-    transform: translate(0, 10%);
+    transform: translate(0, 0);
     max-width: 100%;
 }
 
