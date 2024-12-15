@@ -207,6 +207,34 @@ p {
 .mrgTop {
     margin-top: 30px;
 }
+
+
+/* Language selection
+---------------------------------*/
+.language-switcher {
+    position: absolute;
+    top: 8px;
+    right: -120px;
+    width: 120px;
+    z-index: 10;
+}
+  
+/* Adjust positioning for smaller screens */
+@media (max-width: 768px) {
+    .language-switcher {
+        right: 80px; /* Bring it back inside the screen */
+    }
+}
+  .language-switcher select {
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+
+
 /* Top_content
 ---------------------------------*/
 
@@ -220,14 +248,6 @@ p {
     padding-top: 50px;
     padding-bottom: 30px;
 }
-  
-/* .hero_section .img {
-    position: relative;
-    top: -20px;
-    transform: translate(20, 0);
-    max-width: 100%;
-} */
-
 
 .white_pad {
     position: relative;
@@ -313,13 +333,11 @@ a.read_more2:hover {
 #service {
     padding: 60px 0px;
     background: #EFEFEF;
+    margin-bottom: 50px;
 }
 
 .service_wrapper {
     padding: 40px 0 40px;
-}
-
-.service_section {
 }
 
 .service_block {
@@ -375,6 +393,97 @@ a.read_more2:hover {
     margin: 0px;
 }
 	
+/* Projects
+---------------------------------*/
+.project-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    white-space: nowrap; /* Ensure images flow in a single line */
+  }
+
+  .project-container img {
+    display: inline-block;
+    height: 100%;
+    animation: scroll 20s linear infinite; /* Continuous scrolling */
+  }
+
+  /* Keyframes for scrolling */
+  @keyframes scroll {
+    from {
+      transform: translateX(100%); /* Start from the right */
+    }
+    to {
+      transform: translateX(-100%); /* Move to the left and exit */
+    }
+  }
+
+  /* Pause animation on hover */
+  .project-container:hover img {
+    animation-play-state: paused; /* Pause animation */
+  }
+
+
+
+/* Clients
+---------------------------------*/
+
+.client_logos {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #df0031;
+    margin-top: 60px;
+    padding: 60px 0;
+}
+
+.logo-container {
+    display: flex;
+    animation: scroll 10s linear infinite; /* Continuous scrolling */
+    flex-shrink: 0; /* Prevent shrinking of the container */
+}
+
+.client_logos img {
+    height: 60px; /* Adjust logo height as needed */
+    width: auto;
+}
+
+
+.client_logos ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+.client_logos ul li {
+    display: inline;
+    margin: 0 30px;
+}
+
+
+.client_logos ul a {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.page_section.team {
+    padding: 60px 0;
+}
+
+.page_section.team h6 {
+    margin-bottom: 40px;
+}
+
+/* Pause animation on hover */
+.client_logos:hover .logo-container {
+    animation-play-state: paused; /* Pause animation */
+}
+
+
 
 
 /* Latest Work
@@ -563,9 +672,6 @@ img {
 
 /* Happy Clients
 ---------------------------------*/
-
-
-
 #clients {
     padding: 60px 0px;
 }
@@ -616,42 +722,6 @@ img {
     font-size: 16px;
     color: #888888;
 }
-
-/* Clients
----------------------------------*/
-
-
-.client_logos {
-    background: #df0031;
-    padding: 60px 0;
-    margin-top: 60px;
-}
-
-.client_logos ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-align: center;
-}
-
-.client_logos ul li {
-    display: inline;
-    margin: 0 25px;
-}
-
-.client_logos ul a {
-    display: inline-block;
-    margin: 0 20px;
-}
-
-.page_section.team {
-    padding: 60px 0;
-}
-
-.page_section.team h6 {
-    margin-bottom: 40px;
-}
-
 
 
 /* Team
