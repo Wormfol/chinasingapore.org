@@ -5,6 +5,54 @@ Licence under Creative Commons Attribution 3.0
 Do not remove the back-link in this web template 
 -------------------------------------------------------*/
 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent the form from submitting the default way
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        // Send the form data using EmailJS
+        emailjs.init('fO1tmOKZtnZrPwfzZ');
+        emailjs.send("service_tls2srb","template_xwd7hff",{
+            from_name: name,
+            message: message,
+            reply_to: email,
+        })
+        .then(function(response) {
+            alert("Message sent successfully!");
+            form.reset();
+        }, function(error) {
+            alert("Failed to send message. Please try again.");
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const languageSelect = document.getElementById("languageSelect");
+  
+    if (languageSelect) {
+      // Set the selected option based on the current page URL
+      const currentPage = window.location.pathname;
+      const options = languageSelect.options;
+  
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].value === currentPage.split("/").pop()) {
+          options[i].selected = true;
+          break;
+        }
+      }
+  
+      // Add event listener for language change
+      languageSelect.addEventListener("change", function () {
+        const selectedLanguage = this.value;
+        window.location.href = selectedLanguage; // Redirect to the corresponding page
+      });
+    }
+  });
+  
+
 $(window).load(function() {
     jQuery('#all').click();
     return false;
@@ -130,11 +178,11 @@ wow = new WOW({
     offset: 100
 });
 wow.init();
-document.getElementById('').onclick = function() {
-    var section = document.createElement('section');
-    section.className = 'wow fadeInDown';
-    section.className = 'wow shake';
-    section.className = 'wow zoomIn';
-    section.className = 'wow lightSpeedIn';
-    this.parentNode.insertBefore(section, this);
-};
+// document.getElementById('').onclick = function() {
+//     var section = document.createElement('section');
+//     section.className = 'wow fadeInDown';
+//     section.className = 'wow shake';
+//     section.className = 'wow zoomIn';
+//     section.className = 'wow lightSpeedIn';
+//     this.parentNode.insertBefore(section, this);
+// };
