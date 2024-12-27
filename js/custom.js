@@ -29,12 +29,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.getElementById('languageSelect').addEventListener('change', function() {
-    const selectedLang = this.value.replace('.html', '');
-    localStorage.setItem('preferredLanguage', selectedLang);
-    window.location.href = this.value;
-});
+// document.getElementById('languageSelect').addEventListener('change', function() {
+//     const selectedLang = this.value.replace('.html', '');
+//     localStorage.setItem('preferredLanguage', selectedLang);
+//     window.location.href = this.value;
+// });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const languageSelect = document.getElementById("languageSelect");
+    
+    if (languageSelect) {
+        // Set the selected option based on current page
+        const currentPage = window.location.pathname.split("/").pop();
+        if (currentPage) {
+            const options = languageSelect.options;
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].value === currentPage) {
+                    options[i].selected = true;
+                    break;
+                }
+            }
+        }
+
+        // Add event listener for language change
+        languageSelect.addEventListener("change", function() {
+            const selectedLang = this.value.replace('.html', '');
+            localStorage.setItem('preferredLanguage', selectedLang);
+            window.location.href = this.value;
+        });
+    }
+});
 
 // document.addEventListener("DOMContentLoaded", function () {
 //     const languageSelect = document.getElementById("languageSelect");

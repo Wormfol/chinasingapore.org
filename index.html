@@ -16,15 +16,10 @@
             return 'en';
         }
 
-        // Function to get language preference from localStorage if it exists
-        function getSavedLanguage() {
-            return localStorage.getItem('preferredLanguage');
-        }
-
         // Redirect to appropriate page
         window.onload = function() {
             // Check for saved language preference first
-            const savedLang = getSavedLanguage();
+            const savedLang = localStorage.getItem('preferredLanguage');
             if (savedLang) {
                 window.location.href = savedLang === 'zh' ? 'zh.html' : 'en.html';
                 return;
