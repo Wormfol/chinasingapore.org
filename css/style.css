@@ -111,6 +111,12 @@ p {
 	z-index: 2;
 }
 
+.logo img {
+    width: 80px;  /* or whatever size you want */
+    height: auto;
+}
+
+
 .res-nav_click {
     display: none;
 }
@@ -292,6 +298,11 @@ p {
     color: #FFABAB;
     margin: 0 0 30px 0;
     line-height: 26px;
+}
+
+.top_left_cont p addr {
+    font-weight: 700;
+    color: #FFF;
 }
 
 a.read_more2 {
