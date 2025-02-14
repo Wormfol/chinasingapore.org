@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             reply_to: email,
         })
         .then(function(response) {
-            alert("Message sent successfully!");
+            alert("Message sent successfully, we will respond within 3 working days!");
             form.reset();
         }, function(error) {
             alert("Failed to send message. Please try again.");
