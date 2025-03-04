@@ -1,10 +1,3 @@
-/*
-Author URI: http://webthemez.com/
-Note: 
-Licence under Creative Commons Attribution 3.0 
-Do not remove the back-link in this web template 
--------------------------------------------------------*/
-
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
     form.addEventListener("submit", function (e) {
@@ -29,11 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// document.getElementById('languageSelect').addEventListener('change', function() {
-//     const selectedLang = this.value.replace('.html', '');
-//     localStorage.setItem('preferredLanguage', selectedLang);
-//     window.location.href = this.value;
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
     const languageSelect = document.getElementById("languageSelect");
@@ -59,30 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const languageSelect = document.getElementById("languageSelect");
-  
-//     if (languageSelect) {
-//       // Set the selected option based on the current page URL
-//       const currentPage = window.location.pathname;
-//       const options = languageSelect.options;
-  
-//       for (let i = 0; i < options.length; i++) {
-//         if (options[i].value === currentPage.split("/").pop()) {
-//           options[i].selected = true;
-//           break;
-//         }
-//       }
-  
-//       // Add event listener for language change
-//       languageSelect.addEventListener("change", function () {
-//         const selectedLanguage = this.value;
-//         window.location.href = selectedLanguage; // Redirect to the corresponding page
-//       });
-//     }
-//   });
-  
 
 $(window).load(function() {
     jQuery('#all').click();
@@ -209,11 +173,3 @@ wow = new WOW({
     offset: 100
 });
 wow.init();
-// document.getElementById('').onclick = function() {
-//     var section = document.createElement('section');
-//     section.className = 'wow fadeInDown';
-//     section.className = 'wow shake';
-//     section.className = 'wow zoomIn';
-//     section.className = 'wow lightSpeedIn';
-//     this.parentNode.insertBefore(section, this);
-// };

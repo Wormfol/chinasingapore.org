@@ -1,9 +1,4 @@
-/*
-Author URI: http://webthemez.com/
-Note: 
-Licence under Creative Commons Attribution 3.0 
-Do not remove the back-link in this web template 
--------------------------------------------------------*/
+
 
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/css?family=Raleway:800,700,400);
@@ -214,7 +209,6 @@ p {
     margin-top: 30px;
 }
 
-
 /* Language selection
 ---------------------------------*/
 .language-switcher {
@@ -406,36 +400,42 @@ a.read_more2:hover {
 	
 /* Projects
 ---------------------------------*/
+
 .project-container {
     position: relative;
     width: 100%;
-    height: 300px;
     overflow: hidden;
-    white-space: nowrap; /* Ensure images flow in a single line */
+    white-space: nowrap;
   }
-
-  .project-container img {
-    display: inline-block;
-    height: 100%;
-    animation: scroll 20s linear infinite; /* Continuous scrolling */
+  
+  .project-track {
+    display: flex;
+    width: calc(100% * 2); /* Ensure enough space for all images */
+    animation: scroll 40s linear infinite; /* Extend duration */
   }
-
-  /* Keyframes for scrolling */
+  
+  .project-track img {
+    height: 300px;
+    flex-shrink: 0;
+    width: auto;
+    margin-right: 20px;
+  }
+  
+  /* Adjust keyframes to scroll the full set */
   @keyframes scroll {
     from {
-      transform: translateX(100%); /* Start from the right */
+      transform: translateX(0);
     }
     to {
-      transform: translateX(-100%); /* Move to the left and exit */
+      transform: translateX(-100%); /* Scroll full width before looping */
     }
   }
-
-  /* Pause animation on hover */
-  .project-container:hover img {
-    animation-play-state: paused; /* Pause animation */
+  
+  /* Pause on hover */
+  .project-container:hover .project-track {
+    animation-play-state: paused;
   }
-
-
+  
 
 /* Clients
 ---------------------------------*/
