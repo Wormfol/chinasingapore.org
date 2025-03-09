@@ -18,6 +18,14 @@ img {
     max-width: 100%;
 }
 
+.caption {
+    font-size: 14px;
+    color: #555;
+    /* font-style: italic; */
+    text-align: center;
+    margin-top: 10px;
+}
+
 a, a:hover, a:active {
     outline: 0px !important;
 }
@@ -516,6 +524,11 @@ a.read_more2:hover {
 
 .inner_section {
     padding: 60px 0 20px;
+}
+
+#aboutUs img{
+    margin-bottom:20px;
+    margin-top:20px;
 }
 
 .service-list {
@@ -1731,6 +1744,7 @@ padding: 20px 0 20px;
 }
 #aboutUs img{
 margin-bottom:20px;
+margin-top:20px;
 }
 #aboutUs h3{
 font-size:16px;
