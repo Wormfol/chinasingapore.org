@@ -457,36 +457,40 @@ a.read_more2:hover {
     padding: 60px 0;
 }
 
-.logo-container {
-    display: flex;
-    animation: scroll 10s linear infinite; /* Continuous scrolling */
-    flex-shrink: 0; /* Prevent shrinking of the container */
-}
-
-.client_logos img {
-    height: 60px; /* Adjust logo height as needed */
-    width: auto;
-}
-
-
-.client_logos ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-align: center;
+.partner-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
     white-space: nowrap;
 }
 
-
-.client_logos ul li {
-    display: inline;
-    margin: 0 30px;
+.partner-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scrollPartners 20s linear infinite; /* Continuous, seamless loop */
 }
 
+.partner-track img {
+    height: 60px; /* Adjust logo height as needed */
+    width: auto;
+    flex-shrink: 0;
+    margin: 0 40px;
+}
 
-.client_logos ul a {
-    display: inline-block;
-    margin: 0 20px;
+/* Track content is duplicated in the markup, so -50% loops seamlessly */
+@keyframes scrollPartners {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause on hover */
+.client_logos:hover .partner-track {
+    animation-play-state: paused;
 }
 
 .page_section.team {
