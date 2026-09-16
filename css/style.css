@@ -406,44 +406,53 @@ a.read_more2:hover {
     margin: 0px;
 }
 	
-/* Projects
+/* Auto-scrolling image marquee (shared by Projects & Partners)
 ---------------------------------*/
 
-.project-container {
+.marquee {
     position: relative;
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-  }
-  
-  .project-track {
+}
+
+.marquee-track {
     display: flex;
-    width: calc(100% * 2); /* Ensure enough space for all images */
-    animation: scroll 40s linear infinite; /* Extend duration */
-  }
-  
-  .project-track img {
-    height: 300px;
+    align-items: center;
+    width: max-content;
+    animation-name: marqueeScroll;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.marquee-track img {
     flex-shrink: 0;
     width: auto;
-    margin-right: 20px;
-  }
-  
-  /* Adjust keyframes to scroll the full set */
-  @keyframes scroll {
+}
+
+/* Track content is duplicated in the markup, so -50% loops seamlessly */
+@keyframes marqueeScroll {
     from {
-      transform: translateX(0);
+        transform: translateX(0);
     }
     to {
-      transform: translateX(-100%); /* Scroll full width before looping */
+        transform: translateX(-50%);
     }
-  }
-  
-  /* Pause on hover */
-  .project-container:hover .project-track {
+}
+
+/* Pause on hover */
+.marquee:hover .marquee-track {
     animation-play-state: paused;
-  }
-  
+}
+
+.project-marquee .marquee-track {
+    animation-duration: 40s;
+}
+
+.project-marquee .marquee-track img {
+    height: 300px;
+    margin-right: 20px;
+}
 
 /* Clients
 ---------------------------------*/
@@ -457,40 +466,13 @@ a.read_more2:hover {
     padding: 60px 0;
 }
 
-.partner-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
+.partner-marquee .marquee-track {
+    animation-duration: 20s;
 }
 
-.partner-track {
-    display: flex;
-    align-items: center;
-    width: max-content;
-    animation: scrollPartners 20s linear infinite; /* Continuous, seamless loop */
-}
-
-.partner-track img {
+.partner-marquee .marquee-track img {
     height: 60px; /* Adjust logo height as needed */
-    width: auto;
-    flex-shrink: 0;
     margin: 0 40px;
-}
-
-/* Track content is duplicated in the markup, so -50% loops seamlessly */
-@keyframes scrollPartners {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* Pause on hover */
-.client_logos:hover .partner-track {
-    animation-play-state: paused;
 }
 
 .page_section.team {
@@ -499,11 +481,6 @@ a.read_more2:hover {
 
 .page_section.team h6 {
     margin-bottom: 40px;
-}
-
-/* Pause animation on hover */
-.client_logos:hover .logo-container {
-    animation-play-state: paused; /* Pause animation */
 }
 
 
